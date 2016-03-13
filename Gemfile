@@ -35,6 +35,9 @@ gem 'puma'
 # Use rails_stgout_logging to configure your app to log to standard out
 gem 'rails_stdout_logging'
 
+# Use rack-health to create health check endpoint
+gem 'rack-health'
+
 group :development, :test do
   # Call 'byebug' anywhere in the code to stop execution and get a debugger console
   gem 'byebug'
