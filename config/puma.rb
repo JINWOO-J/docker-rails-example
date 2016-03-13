@@ -6,6 +6,7 @@ preload_app!
 
 rackup      DefaultRackup
 port        ENV['PORT']     || 3000
+bind        ENV['SOCKET']   || 'unix:///app/tmp/puma.sock'
 environment ENV['RACK_ENV'] || 'development'
 
 on_worker_boot do
