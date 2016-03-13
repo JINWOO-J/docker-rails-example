@@ -37,7 +37,8 @@ RUN curl -SLO "https://nodejs.org/dist/v$NODE_VERSION/node-v$NODE_VERSION-linux-
 # Install application dependencies
 #   ref: https://github.com/docker-library/mysql/blob/master/5.6/Dockerfile
 #
-RUN apt-get update && apt-get install -y \
+RUN apt-get update \
+  && apt-get install -y \
     build-essential \
     libpq-dev \
   && rm -rf /var/lib/apt/lists/*
