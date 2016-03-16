@@ -26,5 +26,5 @@ db:
 test:
   image: quay.io/spesnova/infrataster:latest
   volumes:
-    - ./test/integration:/test/spec
+    - ./test/container:/test/spec
   net: "container:proxy"

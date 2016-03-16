@@ -11,7 +11,7 @@ echo "==> Waiting 5 seconds for db service..."
 sleep 5
 
 echo "==> Run migration..."
-docker-compose run web rake db:create db:migrate
+docker-compose run --rm web rake db:create db:migrate
 
 echo "==> Creating web,proxy service..."
 docker-compose up -d web proxy
