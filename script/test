@@ -2,6 +2,8 @@
 
 test -e
 
+echo "==> Using $COMPOSE_FILE"
+
 echo "==> Creating db service..."
 docker-compose up -d db
 
@@ -20,7 +22,7 @@ sleep 2
 echo "==> Running tests..."
 docker-compose run --rm test
 
-if [ $? -eq 0 ] ; then
+if [ $? -eq 0 ] && [ $COMPOSE_FILE = "docker-compose.yml" ] ; then
   echo "==> Cleaning up..."
   docker-compose down
 fi
