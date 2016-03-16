@@ -6,6 +6,8 @@
 README.md
 .env
 docker-compose.yml
+docker-compose.v1.yml
+.travis.yml
 
 ###############################################
 #################### Rails ####################
