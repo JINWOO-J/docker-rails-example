@@ -1,7 +1,7 @@
 version: "2"
 services:
   proxy:
-    image: spesnova/nginx-example
+    image: quay.io/spesnova/nginx-example:latest
     ports:
       - 80:8080
     volumes_from:
@@ -30,7 +30,7 @@ services:
       - POSTGRES_USER=hello
       - POSTGRES_PASSWORD=world
   test:
-    image: infrataster
+    image: quay.io/spesnova/infrataster:latest
     volumes:
       - ./test/integration:/test/spec
     depends_on:
