@@ -29,3 +29,10 @@ services:
     environment:
       - POSTGRES_USER=hello
       - POSTGRES_PASSWORD=world
+  test:
+    image: infrataster
+    volumes:
+      - ./test/integration:/test/spec
+    depends_on:
+      - proxy
+    network_mode: "service:proxy"
