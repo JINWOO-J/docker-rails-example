@@ -32,7 +32,7 @@ services:
   test:
     image: quay.io/spesnova/infrataster:latest
     volumes:
-      - ./test/integration:/test/spec
+      - ./test/container:/test/spec
     depends_on:
       - proxy
     network_mode: "service:proxy"
