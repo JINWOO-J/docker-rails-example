@@ -37,6 +37,7 @@ services:
       - proxy
     network_mode: "service:proxy"
 
+  # Monitoring agent candidates
   datadog:
     image: datadog/docker-dd-agent:latest
     container_name: dd-agent
@@ -45,3 +46,13 @@ services:
       - /var/run/docker.sock:/var/run/docker.sock
       - /proc/:/host/proc/:ro
       - /sys/fs/cgroup/:/host/sys/fs/cgroup:ro
+  cadvisor:
+    image: google/cadvisor:latest
+    container_name: cAdvisor
+    ports:
+      - 8080:8080
+    volumes:
+      - /:/rootfs:ro
+      - /var/run:/var/run:rw
+      - /sys:/sys:ro
+      - /var/lib/docker/:/var/lib/docker:ro
