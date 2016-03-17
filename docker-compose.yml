@@ -8,6 +8,7 @@ services:
       - web
     depends_on:
       - web
+    stop_signal: SIGQUIT
   web:
     build: .
     command: [bundle, exec, puma, -C, config/puma.rb]
@@ -19,6 +20,7 @@ services:
     links:
       - db
     env_file: .env
+    stop_signal: SIGQUIT
     environment:
       - RACK_ENV=production
       - RAILS_ENV=production
@@ -26,6 +28,7 @@ services:
       - SECRET_KEY_BASE=61f9fb4243fcf0a8caa6a141f5c03a66eb0be9e1568037fd0201deb31aa392644f9b70e7346d47ccda90bbfc2e8c261c674cc9133c10ab45e73caa02e6e2a2c0
   db:
     image: postgres:9.5.1
+    stop_signal: SIGTERM
     environment:
       - POSTGRES_USER=hello
       - POSTGRES_PASSWORD=world
