@@ -7,6 +7,7 @@ README.md
 .env
 docker-compose.yml
 docker-compose.v1.yml
+fluentd.docker-compose.yml
 .travis.yml
 
 ###############################################
