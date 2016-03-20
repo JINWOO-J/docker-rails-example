@@ -61,11 +61,11 @@ services:
       - /var/lib/docker/:/var/lib/docker:ro
 
   # Dedicated logging container examples
-  logentries:
-    image: logentries/docker-logentries:latest
-    command: -t ${LOGENTRIES_TOKEN}
-    volumes:
-      - /var/run/docker.sock:/var/run/docker.sock
+  #logentries:
+  #  image: logentries/docker-logentries:latest
+  #  command: -t ${LOGENTRIES_TOKEN}
+  #  volumes:
+  #    - /var/run/docker.sock:/var/run/docker.sock
   logspout:
     image: gliderlabs/logspout:v2
     container_name: logspout
