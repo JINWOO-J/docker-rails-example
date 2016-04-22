@@ -37,10 +37,18 @@ spec:
       - name: rails
         image: quay.io/spesnova/rails-example:latest
         command: ["bundle", "exec", "puma", "-C", "config/puma.rb"]
+        lifecycle:
+          postStart:
+            exec:
+              command:
+                - "cp"
+                - "-r"
+                - "/app/public"
+                - "/nginx/"
         volumeMounts:
           - mountPath: /app/tmp
             name: tmp
-          - mountPath: /app/public
+          - mountPath: /nginx/public
             name: public
         env:
         - name: "RACK_ENV"
